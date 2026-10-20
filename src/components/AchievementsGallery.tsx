@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, X, ExternalLink, Award, CheckCircle2, Calend
 
 interface AchievementPoster {
   id: string;
-  cardNum: string;
   badgeLabel: string;
   headlineLines: string[];
   headlineColor: string;
@@ -37,22 +36,20 @@ export const AchievementsGallery: React.FC = () => {
   const [selectedPoster, setSelectedPoster] = useState<AchievementPoster | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // 5 Verified Cards with softer, lighter pastel tinted themes matching Pavan's portfolio palette
+  // 5 Verified Cards with their original individual pastel color themes preserved
   const posters: AchievementPoster[] = [
     {
-      id: 'nptel-java',
-      cardNum: '01',
-      badgeLabel: 'NPTEL · IIT KHARAGPUR',
-      headlineLines: ['NPTEL', 'JAVA'],
+      id: 'national-entrepreneurship-challenge',
+      badgeLabel: 'IIT BOMBAY E-CELL',
+      headlineLines: ['NATIONAL', 'ENTREPRENEURSHIP', 'CHALLENGE'],
       headlineColor: 'text-[#0B1F33]',
-      headlineHighlightWord: 'JAVA',
+      headlineHighlightWord: 'CHALLENGE',
       headlineHighlightColor: 'text-[#D97706]',
-      headlineSize: 'text-6xl sm:text-7xl lg:text-8xl',
+      headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
-        'Programming in Java',
-        'IIT Kharagpur',
-        '2024',
-        'Score: 86%'
+        'IIT Bombay',
+        'National Finalist Team',
+        'Venture Incubation'
       ],
       theme: {
         bg: 'bg-gradient-to-br from-[#FFFDF7] via-[#FFF8E7] to-[#FEF0D0]',
@@ -66,32 +63,32 @@ export const AchievementsGallery: React.FC = () => {
         subTextColor: 'text-[#92400E]'
       },
       modal: {
-        title: 'NPTEL Programming in Java',
-        subtitle: 'Elite + Silver National Certification',
-        issuer: 'IIT Kharagpur & Ministry of Education, Govt. of India',
-        date: '2024',
-        scoreOrResult: 'Score: 86% (Top Performer)',
-        overview: 'Comprehensive certification program conducted by IIT Kharagpur covering foundational and advanced Java paradigms. Demonstrated in-depth proficiency in object-oriented programming principles, modern concurrent architectures, and runtime robustness.',
+        title: 'National Entrepreneurship Challenge (NEC)',
+        subtitle: 'National Finalist Delegation · IIT Bombay',
+        issuer: 'Entrepreneurship Cell, IIT Bombay',
+        date: 'National Level Competition',
+        scoreOrResult: 'Qualified for National Finals',
+        overview: 'Participated in the premier National Entrepreneurship Challenge conducted by IIT Bombay. Led our collegiate team through rigorous enterprise pitching, venture validation, and operational roadmap challenges to successfully qualify for the National Finals at IIT Bombay.',
         highlights: [
-          'Scored 86% with Elite + Silver medal recognition from IIT Kharagpur faculty.',
-          'Mastered Java Collections Framework, Generics, Stream API, and Lambda expressions.',
-          'Implemented multi-threaded process synchronizations, thread safety, and JVM memory profiling.',
-          'Rigorous 12-week national curriculum with proctored in-person algorithmic examinations.'
+          'Led the institutional collegiate team to qualify for the prestigious National Finals held at IIT Bombay.',
+          'Formulated structured business models, feasibility analyses, and market-entry strategies under competitive scrutiny.',
+          'Represented ANITS on a national platform, competing with top collegiate innovation cells across India.',
+          'Executed campus-wide entrepreneurship drives, mentoring peers on pitch deck curation and startup frameworks.'
         ]
       }
     },
     {
-      id: 'smart-india-hackathon',
-      cardNum: '02',
-      badgeLabel: 'MINISTRY OF EDUCATION',
-      headlineLines: ['SMART', 'INDIA', 'SIH'],
+      id: 'bizverve-summit',
+      badgeLabel: 'BIZVERVE · ANITS',
+      headlineLines: ['BIZVERVE', 'ENTREPRENEURSHIP', 'SUMMIT'],
       headlineColor: 'text-[#0B1F33]',
-      headlineHighlightWord: 'SIH',
+      headlineHighlightWord: 'SUMMIT',
       headlineHighlightColor: 'text-[#F97316]',
-      headlineSize: 'text-5xl sm:text-6xl lg:text-7xl',
+      headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
-        'Blue Sprout',
-        'Smart Rainwater Assessment Application'
+        'Vice President · BiZverve',
+        '250+ Regional Participants',
+        'Business & Skill Conclave'
       ],
       theme: {
         bg: 'bg-gradient-to-br from-[#FFF9F6] via-[#FFF0E8] to-[#FED7C8]',
@@ -105,32 +102,32 @@ export const AchievementsGallery: React.FC = () => {
         subTextColor: 'text-[#C2410C]'
       },
       modal: {
-        title: 'Smart India Hackathon (SIH)',
-        subtitle: 'Blue Sprout — Smart Rainwater Assessment System',
-        issuer: 'Ministry of Education Innovation Cell · Govt. of India',
-        date: 'National Level Hackathon',
-        scoreOrResult: 'Selected Innovation Solution',
-        overview: 'Conceived and engineered "Blue Sprout", an automated rainwater harvesting feasibility and catchment assessment platform built for the Smart India Hackathon to solve urban groundwater depletion.',
+        title: 'BiZverve Entrepreneurship Summit',
+        subtitle: 'Flagship Inter-College Startup & Skills Conclave',
+        issuer: 'BiZverve · Business & Entrepreneurship Club, ANITS',
+        date: 'Executive Leadership Tenure',
+        scoreOrResult: '250+ Participants Across Visakhapatnam',
+        overview: 'Served as Vice President of BiZverve, the official Business and Entrepreneurship Club at ANITS. Spearheaded the planning, curation, and execution of the premier inter-college entrepreneurship summit, welcoming over 250+ students from across Visakhapatnam, while orchestrating hands-on workshops centered on business fundamentals, venture ideation, and skill development.',
         highlights: [
-          'Engineered algorithmic rainwater harvesting volume calculators based on historical rainfall and rooftop catchment.',
-          'Built GIS mapping utilities to analyze soil permeability, runoff coefficients, and recharge pit dimensions.',
-          'Developed an interactive consumer calculator providing cost estimation and return-on-investment metrics.',
-          'Presented the complete end-to-end technical prototype to national evaluators and jury panels.'
+          'Organized a landmark inter-college summit uniting 250+ student entrepreneurs, innovators, and delegates across Visakhapatnam.',
+          'Directed workshops covering business fundamentals, pitch building, financial forecasting, and modern skill development.',
+          'Managed cross-functional student committees, keynote speaker sessions, interactive panel discussions, and founder showcases.',
+          'Fostered cross-college collaboration and established lasting regional entrepreneurial networks.'
         ]
       }
     },
     {
       id: 'web-dev-internship',
-      cardNum: '03',
-      badgeLabel: 'ENGINEERING INTERNSHIP',
+      badgeLabel: 'TEKNOV8R INTERNSHIP',
       headlineLines: ['WEB', 'DEVELOPMENT', 'INTERNSHIP'],
       headlineColor: 'text-[#0B1F33]',
       headlineHighlightWord: 'INTERNSHIP',
       headlineHighlightColor: 'text-[#2563EB]',
       headlineSize: 'text-4xl sm:text-5xl lg:text-[3.25rem]',
       supportingItems: [
-        'TEKNOV8R',
-        'May–July 2025'
+        'TEKNOV8R · May–July 2025',
+        'Teen Wellness Mobile App',
+        'UI Screens & Core Features'
       ],
       theme: {
         bg: 'bg-gradient-to-br from-[#F8FAFF] via-[#EEF4FF] to-[#DBEAFE]',
@@ -144,32 +141,32 @@ export const AchievementsGallery: React.FC = () => {
         subTextColor: 'text-[#1E40AF]'
       },
       modal: {
-        title: 'Full-Stack Web Development Internship',
-        subtitle: 'Enterprise Software Engineering & Architecture',
+        title: 'Web Development Internship',
+        subtitle: 'Teen Wellness Mobile Application Engineering',
         issuer: 'TEKNOV8R',
         date: 'May–July 2025',
         scoreOrResult: 'Completed Internship with Distinction',
-        overview: 'Selected for an intensive Web Development Internship at TEKNOV8R, contributing to production-grade client portals, robust API integrations, and modern reactive interface systems.',
+        overview: 'Worked as a Web Development Intern at TEKNOV8R from May to July 2025. Contributed directly to the engineering of the Teen Wellness mobile application, crafting responsive, accessible UI screens, integrating core user-centric features, and systematically resolving technical bugs and interface anomalies.',
         highlights: [
-          'Collaborated with senior software architects to develop modular, reusable React and Django frontend components.',
-          'Implemented secure REST endpoints, JWT authentication workflows, and token refresh mechanisms.',
-          'Optimized SQL query execution plans and database indexing strategies to boost page load performance.',
-          'Adhered to industry Git branching hygiene, automated CI testing, and responsive cross-browser audits.'
+          'Contributed to the core development lifecycle of the Teen Wellness mobile application.',
+          'Built polished, responsive UI screens ensuring seamless navigation, accessibility, and visual consistency.',
+          'Implemented essential wellness tracking features and intuitive interactive components.',
+          'Conducted root-cause debugging, performance profiling, and bug fixes to optimize app stability.'
         ]
       }
     },
     {
-      id: 'national-entrepreneurship-challenge',
-      cardNum: '04',
-      badgeLabel: 'IIT BOMBAY E-CELL',
-      headlineLines: ['NATIONAL', 'ENTREPRENEURSHIP', 'CHALLENGE'],
+      id: 'iic-innovation-coordinator',
+      badgeLabel: 'IIC · ANITS',
+      headlineLines: ['INNOVATION', 'AND', 'ENTREPRENEURSHIP'],
       headlineColor: 'text-[#0B1F33]',
-      headlineHighlightWord: 'CHALLENGE',
+      headlineHighlightWord: 'INNOVATION',
       headlineHighlightColor: 'text-[#00A9C2]',
       headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
-        'IIT Bombay',
-        'Team qualified for the finals'
+        'IIC Coordinator · ANITS',
+        'Student & Faculty Drives',
+        'Creative Solutions & Ideation'
       ],
       theme: {
         bg: 'bg-gradient-to-br from-[#F6FBFC] via-[#EBF7F9] to-[#D5F0F5]',
@@ -183,32 +180,32 @@ export const AchievementsGallery: React.FC = () => {
         subTextColor: 'text-[#0E7490]'
       },
       modal: {
-        title: 'National Entrepreneurship Challenge (NEC)',
-        subtitle: 'National Finalist Delegation',
-        issuer: 'Entrepreneurship Cell, IIT Bombay',
-        date: 'National Level Competition',
-        scoreOrResult: 'Qualified for National Finals',
-        overview: 'Spearheaded the official ANITS collegiate entrepreneurship team in the National Entrepreneurship Challenge conducted by IIT Bombay, competing across enterprise pitch rounds and venture creation tasks.',
+        title: "Institution's Innovation Council (IIC)",
+        subtitle: 'Departmental Innovation & Entrepreneurship Coordinator',
+        issuer: "Institution's Innovation Council (MoE Cell) · ANITS",
+        date: 'Coordinator Tenure',
+        scoreOrResult: 'IIC Departmental Coordinator',
+        overview: "Served as the Institution's Innovation Council (IIC) Coordinator at ANITS, serving as a primary catalyst connecting students and faculty. Actively coordinated departmental innovation, design thinking, and entrepreneurship initiatives, inspiring students to turn creative concepts into viable, impactful solutions.",
         highlights: [
-          'Led our institution’s delegation to qualify for the prestigious National Finals at IIT Bombay.',
-          'Curated and submitted venture market research, financial forecasting models, and customer acquisition hypotheses.',
-          'Conducted campus-wide awareness campaigns, founder masterclasses, and entrepreneurial workshops.',
-          'Ranked among premier participating collegiate entrepreneurship cells across India.'
+          'Coordinated departmental innovation and entrepreneurship symposiums, hackathons, and ideation roundtables.',
+          'Served as an active bridge between faculty mentors and passionate student innovators.',
+          'Encouraged multidisciplinary student cohorts to tackle real-world problems with inventive solutions.',
+          'Promoted intellectual property awareness, creative design methodology, and institutional innovation roadmaps.'
         ]
       }
     },
     {
-      id: 'bizverve-vice-president',
-      cardNum: '05',
-      badgeLabel: 'LEADERSHIP TENURE',
-      headlineLines: ['BIZVERVE', 'VICE', 'PRESIDENT'],
+      id: 'ecell-president',
+      badgeLabel: 'E-CELL ANITS',
+      headlineLines: ['E-CELL', 'CAMPUS', 'LEADERSHIP'],
       headlineColor: 'text-[#0B1F33]',
-      headlineHighlightWord: 'PRESIDENT',
+      headlineHighlightWord: 'LEADERSHIP',
       headlineHighlightColor: 'text-[#0D9488]',
-      headlineSize: 'text-4xl sm:text-5xl lg:text-[3.5rem]',
+      headlineSize: 'text-4xl sm:text-5xl lg:text-[3.25rem]',
       supportingItems: [
-        'Entrepreneurship Club',
-        'ANITS'
+        'E-Cell President',
+        'Venture Incubation Pipeline',
+        'Entrepreneurship Ecosystem'
       ],
       theme: {
         bg: 'bg-gradient-to-br from-[#F6FDFB] via-[#E6F8F4] to-[#D1F2EA]',
@@ -222,17 +219,17 @@ export const AchievementsGallery: React.FC = () => {
         subTextColor: 'text-[#0F766E]'
       },
       modal: {
-        title: 'BiZverve Vice President',
-        subtitle: 'Executive Leadership & Startup Ecosystem Development',
-        issuer: 'BiZverve · ANITS',
-        date: 'Executive Tenure',
-        scoreOrResult: 'Executive Leadership Board',
-        overview: 'Served as Vice President of BiZverve, steering collegiate entrepreneurship drives, inter-college summits, and cross-disciplinary technical incubations at ANITS.',
+        title: 'Entrepreneurship Cell (E-Cell) Leadership',
+        subtitle: 'President · Campus Innovation & Venture Ecosystem',
+        issuer: 'Entrepreneurship Cell (E-Cell) · ANITS',
+        date: 'Presidential Tenure',
+        scoreOrResult: 'President, E-Cell',
+        overview: 'Served as President of the Entrepreneurship Cell (E-Cell) at ANITS, spearheading institutional initiatives that inspire, mentor, and empower student builders. Championed early-stage venture exploration, structured bootcamps, and business model validation, fostering a vibrant culture of innovation across campus.',
         highlights: [
-          'Organized and executed a flagship regional inter-college startup summit bringing together 250+ student founders and innovators.',
-          'Conducted interactive speaker series hosting industry leaders, alumni entrepreneurs, and venture mentors.',
-          'Mentored early-stage student concepts and facilitated pitch reviews, prototyping sessions, and investor presentations.',
-          'Cultivated strategic partnerships between student builders and institutional innovation bodies.'
+          'Led the campus Entrepreneurship Cell as President, defining the strategic roadmap for venture development.',
+          'Cultivated an active ecosystem encouraging students to explore disruptive business ideas and commercialization.',
+          'Organized venture pitch days, founder fireside chats, and structured entrepreneurial incubation bootcamps.',
+          'Mentored early-stage student teams in problem validation, MVP scoping, and investor presentation readiness.'
         ]
       }
     }
@@ -261,25 +258,24 @@ export const AchievementsGallery: React.FC = () => {
   // Render stylized isometric abstract artwork inside cards to match the reference's editorial flair
   const renderCardArtwork = (id: string, color: string) => {
     switch (id) {
-      case 'nptel-java':
-        // Layered isometric block with stamp
+      case 'national-entrepreneurship-challenge':
+        // Ascending geometric staircase / trophy beacon
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
-            <polygon points="50,15 85,35 50,55 15,35" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
-            <polygon points="15,35 50,55 50,85 15,65" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2.5" />
-            <polygon points="85,35 50,55 50,85 85,65" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2.5" />
-            <circle cx="50" cy="35" r="8" fill="#F97316" />
-            <path d="M47 35L49 37L54 32" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <polygon points="50,12 82,30 50,48 18,30" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
+            <polygon points="18,30 50,48 50,78 18,60" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2.5" />
+            <polygon points="82,30 50,48 50,78 82,60" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="2.5" />
+            <circle cx="50" cy="30" r="6" fill="#D97706" />
           </svg>
         );
-      case 'smart-india-hackathon':
-        // Isometric stepped pyramid / water catchment ripples
+      case 'bizverve-summit':
+        // Conclave crest / multi-tiered summit hexagon
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
-            <path d="M50 15L80 32V68L50 85L20 68V32L50 15Z" stroke={color} strokeWidth="2.5" fill="white" fillOpacity="0.6" />
-            <path d="M50 28L70 40V60L50 72L30 60V40L50 28Z" stroke={color} strokeWidth="2" fill={color} fillOpacity="0.15" />
-            <circle cx="50" cy="50" r="10" fill="white" />
-            <circle cx="50" cy="50" r="4" fill="#EA580C" />
+            <path d="M50 12L85 32V68L50 88L15 68V32L50 12Z" stroke={color} strokeWidth="2.5" fill="white" fillOpacity="0.7" />
+            <polygon points="50,25 75,40 75,65 50,80 25,65 25,40" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2" />
+            <circle cx="50" cy="50" r="12" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2" />
+            <circle cx="50" cy="50" r="5" fill="#EA580C" />
           </svg>
         );
       case 'web-dev-internship':
@@ -291,23 +287,26 @@ export const AchievementsGallery: React.FC = () => {
             <polygon points="50,42 90,64 50,86 10,64" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="2.5" />
           </svg>
         );
-      case 'national-entrepreneurship-challenge':
-        // Ascending geometric staircase / trophy beacon
-        return (
-          <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
-            <polygon points="50,12 82,30 50,48 18,30" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
-            <polygon points="18,30 50,48 50,78 18,60" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2.5" />
-            <polygon points="82,30 50,48 50,78 82,60" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="2.5" />
-            <circle cx="50" cy="30" r="6" fill="#F97316" />
-          </svg>
-        );
-      case 'bizverve-vice-president':
-        // Isometric folding prism / growth crest
+      case 'iic-innovation-coordinator':
+        // Innovation spark / idea prism
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <polygon points="50,15 85,35 50,55 15,35" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
-            <polygon points="50,55 85,35 85,75 50,95" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2.5" />
-            <polygon points="50,55 15,35 15,75 50,95" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2.5" />
+            <polygon points="50,55 85,35 85,75 50,95" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="2.5" />
+            <polygon points="50,55 15,35 15,75 50,95" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="2.5" />
+            <circle cx="50" cy="40" r="8" fill="#00A9C2" />
+            <path d="M50 20V26M50 54V60M30 40H36M64 40H70" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        );
+      case 'ecell-president':
+        // Leadership crown / tiered dais
+        return (
+          <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
+            <polygon points="50,14 84,34 50,54 16,34" fill="white" fillOpacity="0.85" stroke={color} strokeWidth="2.5" />
+            <polygon points="16,34 50,54 50,84 16,64" fill={color} fillOpacity="0.18" stroke={color} strokeWidth="2.5" />
+            <polygon points="84,34 50,54 50,84 84,64" fill={color} fillOpacity="0.32" stroke={color} strokeWidth="2.5" />
+            <polygon points="50,22 65,34 50,46 35,34" fill="#0D9488" fillOpacity="0.8" />
+            <circle cx="50" cy="34" r="4" fill="white" />
           </svg>
         );
       default:
@@ -398,13 +397,6 @@ export const AchievementsGallery: React.FC = () => {
                     <div className="text-[10px] font-mono uppercase tracking-widest text-gray-500 block pt-0.5 font-semibold">
                       PAVAN BHIMARAJU · PORTFOLIO
                     </div>
-                  </div>
-
-                  {/* Stamp Number */}
-                  <div className="text-right">
-                    <span className="font-poster text-2xl sm:text-3xl font-black text-gray-400/80 tracking-normal block leading-none">
-                      #{poster.cardNum}
-                    </span>
                   </div>
                 </div>
 
@@ -498,7 +490,7 @@ export const AchievementsGallery: React.FC = () => {
 
               <div className="relative z-10 space-y-2">
                 <span className={`inline-block px-3 py-1 rounded-md ${selectedPoster.theme.badgeBg} ${selectedPoster.theme.badgeText} text-xs font-mono font-black uppercase tracking-wider border border-black/5 shadow-xs`}>
-                  {selectedPoster.badgeLabel} · #{selectedPoster.cardNum}
+                  {selectedPoster.badgeLabel}
                 </span>
 
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black font-display leading-tight">
