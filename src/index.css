@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-cyan: #00A9C7;
+  --color-cobalt-blue: #167D7F;
+  --color-signal-orange: #FF791F;
+  --color-charcoal-main: #36393F;
+  --color-charcoal-deep: #454951;
+  --color-charcoal-border: #5C6068;
+  --color-surface-soft: #F1F3F5;
+  --color-text-primary: #F5F7FA;
+  --color-text-secondary: #D5D7DC;
+
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-poster: 'Bebas Neue', 'Anton', Impact, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+.font-poster {
+  font-family: 'Bebas Neue', 'Anton', Impact, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+:root {
+  --primary-cyan: #00A9C7;
+  --primary-teal: #167D7F;
+  --primary-orange: #FF791F;
+  --bg-charcoal: #36393F;
+  --bg-deep-charcoal: #454951;
+  --border-grey: #5C6068;
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: #36393F;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #36393F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5C6068;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00A9C7;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #00A9C7;
+  outline-offset: 2px;
+}
+
+/* Reference card soft shadow */
+.shadow-soft-card {
+  box-shadow: 0 10px 30px -5px rgba(8, 169, 194, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-elevated {
+  box-shadow: 0 20px 40px -10px rgba(8, 119, 185, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
+}
