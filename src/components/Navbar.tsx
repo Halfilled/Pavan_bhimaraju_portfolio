@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
               <span className="font-extrabold text-sm sm:text-base tracking-wide text-[#3A0F34] group-hover:text-[#EAAA00] transition-colors leading-tight">
                 PAVAN BHIMARAJU
               </span>
-              <span className="text-[10px] tracking-wider uppercase font-semibold text-[#5A3A54]">
+              <span className="text-[10px] tracking-wider uppercase font-bold text-[#3A0F34]/80">
                 CS ENGINEER • AI & DEV
               </span>
             </div>
@@ -63,12 +63,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
                   className={`text-xs font-bold tracking-wider uppercase transition-colors relative py-1 ${
                     isActive 
                       ? 'text-[#3A0F34] font-black' 
-                      : 'text-[#5A3A54] hover:text-[#3A0F34]'
+                      : 'text-[#3A0F34]/75 hover:text-[#3A0F34]'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#EAAA00] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#EAAA00] rounded-full" />
                   )}
                 </a>
               );
