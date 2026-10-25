@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, ArrowUpRight } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon, GoogleDriveIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, EmailIcon } from './SocialIcons';
 
 export const Contact: React.FC = () => {
   const profile = PORTFOLIO_DATA.profile;
@@ -284,7 +284,7 @@ export const Contact: React.FC = () => {
                 title="Email Pavan"
                 aria-label="Email Pavan"
               >
-                <GoogleDriveIcon className="w-4 h-4" />
+                <EmailIcon className="w-4 h-4" />
               </a>
             </div>
 

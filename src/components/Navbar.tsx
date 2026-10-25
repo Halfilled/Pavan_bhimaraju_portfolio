@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Bot, Menu, X } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, GoogleDriveIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, EmailIcon } from './SocialIcons';
 
 interface NavbarProps {
   onOpenAgent: () => void;
@@ -98,9 +98,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
             <a
               href="mailto:pavanbhimaraju4@gmail.com"
               className="w-8 h-8 rounded-full bg-white text-[#3A0F34] hover:bg-[#EAAA00] hover:text-[#3A0F34] flex items-center justify-center transition-all shadow-sm"
-              title="Google Drive / Resume"
+              title="Email Pavan (pavanbhimaraju4@gmail.com)"
+              aria-label="Email Pavan"
             >
-              <GoogleDriveIcon className="w-4 h-4" />
+              <EmailIcon className="w-4 h-4" />
             </a>
           </div>
 
