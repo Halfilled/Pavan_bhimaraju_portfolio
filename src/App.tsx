@@ -43,12 +43,12 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#36393F] text-[#F5F7FA] selection:bg-[#00A9C7] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[#C6D0D9] text-[#3A0F34] selection:bg-[#EAAA00] selection:text-[#3A0F34] font-sans antialiased overflow-x-hidden">
       {/* Sticky Top Navbar matching reference */}
       <Navbar onOpenAgent={() => handleOpenAgent()} activeSection={activeSection} />
 
       {/* Main Slide-Down Sequential Sections */}
-      <main className="space-y-0">
+      <main className="space-y-0 w-full overflow-x-hidden">
         {/* Section 01: Hero & AI Personal Agent Introduction (Ref 3) */}
         <Hero onOpenAgent={handleOpenAgent} isAgentOpen={isAgentOpen} />
 

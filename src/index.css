@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-electric-cyan: #00A9C7;
-  --color-cobalt-blue: #167D7F;
-  --color-signal-orange: #FF791F;
-  --color-charcoal-main: #36393F;
-  --color-charcoal-deep: #454951;
-  --color-charcoal-border: #5C6068;
-  --color-surface-soft: #F1F3F5;
-  --color-text-primary: #F5F7FA;
-  --color-text-secondary: #D5D7DC;
+  --color-ice-silver: #C6D0D9;
+  --color-aubergine-main: #3A0F34;
+  --color-marigold: #EAAA00;
+  --color-surface-soft: #FFFFFF;
+  --color-text-primary: #3A0F34;
+  --color-text-secondary: #5A3A54;
+  --color-border-subtle: #C8D1D9;
 
   --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-poster: 'Bebas Neue', 'Anton', Impact, sans-serif;
@@ -23,18 +21,27 @@
 }
 
 :root {
-  --primary-cyan: #00A9C7;
-  --primary-teal: #167D7F;
-  --primary-orange: #FF791F;
-  --bg-charcoal: #36393F;
-  --bg-deep-charcoal: #454951;
-  --border-grey: #5C6068;
+  --ice-silver: #C6D0D9;
+  --deep-aubergine: #3A0F34;
+  --marigold: #EAAA00;
 }
 
-/* Custom smooth scroll */
+/* Base reset & surface consistency */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #C6D0D9;
+}
+
+/* Custom smooth scroll & transparent scrollbar gutter */
 html {
   scroll-behavior: smooth;
-  background-color: #36393F;
+  scrollbar-width: thin;
+  scrollbar-color: #C8D1D9 transparent;
 }
 
 /* Custom scrollbar */
@@ -43,31 +50,31 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #36393F;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #5C6068;
+  background: #C8D1D9;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00A9C7;
+  background: #EAAA00;
 }
 
 /* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 2px solid #00A9C7;
+  outline: 2px solid #EAAA00;
   outline-offset: 2px;
 }
 
 /* Reference card soft shadow */
 .shadow-soft-card {
-  box-shadow: 0 10px 30px -5px rgba(8, 169, 194, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px -5px rgba(58, 15, 52, 0.06), 0 4px 12px -2px rgba(58, 15, 52, 0.03);
 }
 
 .shadow-elevated {
-  box-shadow: 0 20px 40px -10px rgba(8, 119, 185, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px -10px rgba(58, 15, 52, 0.12), 0 8px 16px -4px rgba(58, 15, 52, 0.04);
 }

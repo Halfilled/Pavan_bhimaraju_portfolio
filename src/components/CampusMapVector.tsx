@@ -48,10 +48,10 @@ export const CampusMapVector: React.FC<CampusMapVectorProps> = ({ activeNumber, 
         </linearGradient>
 
         <filter id="mapShadow" x="-5%" y="-5%" width="110%" height="110%">
-          <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#0B1F33" floodOpacity="0.08" />
+          <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#3A0F34" floodOpacity="0.08" />
         </filter>
         <filter id="pinShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="4" stdDeviation="3" floodColor="#0B1F33" floodOpacity="0.3" />
+          <feDropShadow dx="0" dy="4" stdDeviation="3" floodColor="#3A0F34" floodOpacity="0.3" />
         </filter>
       </defs>
 
@@ -195,7 +195,7 @@ export const CampusMapVector: React.FC<CampusMapVectorProps> = ({ activeNumber, 
         <line x1="651.2" y1="31.7" x2="655.6" y2="29.1" stroke="#38BDF8" strokeWidth="2.0" strokeLinecap="round" opacity="0.9" />
         <line x1="643.1" y1="25.8" x2="647.5" y2="23.3" stroke="#38BDF8" strokeWidth="2.0" strokeLinecap="round" opacity="0.9" />
         <line x1="651.2" y1="21.2" x2="655.6" y2="18.6" stroke="#38BDF8" strokeWidth="2.0" strokeLinecap="round" opacity="0.9" />
-        <polygon points="615.9,9.0 635.0,20.0 659.2,6.0 640.2,-5.0" fill="#00A9C2" stroke="#0B1F33" strokeWidth="0.8" />
+        <polygon points="615.9,9.0 635.0,20.0 659.2,6.0 640.2,-5.0" fill="#EAAA00" stroke="#0B1F33" strokeWidth="0.8" />
         {/* Crane */}
         <g transform="translate(800, 110)">
           <line x1="0" y1="0" x2="0" y2="-55" stroke="#F59E0B" strokeWidth="2.5" />
@@ -261,7 +261,7 @@ export const CampusMapVector: React.FC<CampusMapVectorProps> = ({ activeNumber, 
       {/* 6. INTERACTIVE NUMBERED PINS (Exactly 6 Unique Pins, 1 to 6) */}
       {pins.map((pin) => {
         const isSelected = activeNumber === pin.num;
-        const color = isSelected ? '#FF791F' : '#167D7F';
+        const color = isSelected ? '#EAAA00' : '#3A0F34';
 
         return (
           <g 
@@ -275,7 +275,7 @@ export const CampusMapVector: React.FC<CampusMapVectorProps> = ({ activeNumber, 
           >
             {/* Animated Radar Ring for Active Pin */}
             {isSelected && (
-              <circle cx="0" cy="2" r="16" fill="none" stroke="#FF791F" strokeWidth="2" opacity="0.6">
+              <circle cx="0" cy="2" r="16" fill="none" stroke="#EAAA00" strokeWidth="2" opacity="0.6">
                 <animate attributeName="r" values="14;28" dur="1.5s" repeatCount="indefinite" />
                 <animate attributeName="opacity" values="0.8;0" dur="1.5s" repeatCount="indefinite" />
               </circle>
@@ -314,7 +314,7 @@ export const CampusMapVector: React.FC<CampusMapVectorProps> = ({ activeNumber, 
                 width="130" 
                 height="22" 
                 rx="6" 
-                fill="#36393F" 
+                fill="#3A0F34" 
                 opacity="0.95" 
               />
               <text 

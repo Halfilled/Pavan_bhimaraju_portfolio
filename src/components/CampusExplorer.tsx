@@ -78,73 +78,73 @@ export const CampusExplorer: React.FC = () => {
   const renderRoleIcon = (type: string) => {
     switch (type) {
       case 'chart':
-        return <BarChart2 className="w-6 h-6 text-[#FF791F]" />;
+        return <BarChart2 className="w-6 h-6 text-[#EAAA00]" />;
       case 'bulb':
-        return <Lightbulb className="w-6 h-6 text-[#00A9C7]" />;
+        return <Lightbulb className="w-6 h-6 text-[#3A0F34]" />;
       case 'trophy':
-        return <Trophy className="w-6 h-6 text-[#00A9C7]" />;
+        return <Trophy className="w-6 h-6 text-[#EAAA00]" />;
       case 'heart':
-        return <Heart className="w-6 h-6 text-[#FF791F]" />;
+        return <Heart className="w-6 h-6 text-[#3A0F34]" />;
       case 'users':
-        return <Users2 className="w-6 h-6 text-[#167D7F]" />;
+        return <Users2 className="w-6 h-6 text-[#EAAA00]" />;
       case 'code':
-        return <Code2 className="w-6 h-6 text-[#00A9C7]" />;
+        return <Code2 className="w-6 h-6 text-[#3A0F34]" />;
       default:
-        return <User className="w-6 h-6 text-[#00A9C7]" />;
+        return <User className="w-6 h-6 text-[#3A0F34]" />;
     }
   };
 
   return (
-    <section id="beyond-code" className="py-16 sm:py-24 relative bg-[#36393F] select-none">
+    <section id="beyond-code" className="py-16 sm:py-24 relative bg-[#C6D0D9] select-none">
       {/* Standardized container matching Hero, My Skills, and My Projects for uniform left alignment */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 1. OUTSIDE HEADING AREA (Directly on page background, aligned with My Skills and My Projects) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 mb-8 gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#F5F7FA] font-display whitespace-nowrap">
-              BEYOND <span className="text-[#00A9C7]">THE</span> <span className="text-[#FF791F]">CODE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#3A0F34] font-display whitespace-nowrap">
+              BEYOND <span className="text-[#3A0F34]">THE</span> <span className="text-[#EAAA00]">CODE</span>
             </h2>
-            <div className="h-1.5 w-16 bg-[#FF791F] rounded-full mt-3" />
-            <p className="text-sm sm:text-base text-[#D5D7DC] font-sans mt-2.5">
+            <div className="h-1.5 w-16 bg-[#EAAA00] rounded-full mt-3" />
+            <p className="text-sm sm:text-base text-[#3A0F34]/70 font-sans mt-2.5">
               My journey beyond academics — communities, leadership and impact.
             </p>
           </div>
 
-          <div className="text-right border-l-2 border-[#00A9C7] pl-4 hidden md:block">
-            <span className="text-xs sm:text-sm font-serif italic text-[#D5D7DC] block max-w-xs">
+          <div className="text-right border-l-2 border-[#EAAA00] pl-4 hidden md:block">
+            <span className="text-xs sm:text-sm font-serif italic text-[#3A0F34]/70 block max-w-xs">
               “Building people, ideas and opportunities beyond the screen.”
             </span>
           </div>
         </div>
 
         {/* 2. MAIN CONTENT CARD (Expanded width, high-clarity 2-column layout) */}
-        <div className="bg-[#F1F3F5] rounded-3xl p-5 sm:p-7 lg:p-8 shadow-2xl border border-[#5C6068]/60">
+        <div className="bg-white rounded-3xl p-5 sm:p-7 lg:p-8 shadow-2xl border border-[#3A0F34]/15">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
             
             {/* Left Column (7 cols): Interactive Campus Isometric Map Component */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-3">
               
               {/* Top Map Navigator Toolbar */}
-              <div className="flex items-center justify-between px-1 text-xs font-mono text-gray-500">
+              <div className="flex items-center justify-between px-1 text-xs font-mono text-[#3A0F34]/60">
                 <div className="flex items-center space-x-2">
-                  <Compass className="w-4 h-4 text-[#00A9C7]" />
-                  <span className="font-semibold text-[#0B1F33]">ANITS Campus Model</span>
-                  <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold border border-emerald-200">
+                  <Compass className="w-4 h-4 text-[#EAAA00]" />
+                  <span className="font-semibold text-[#3A0F34]">ANITS Campus Model</span>
+                  <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full bg-[#EAAA00]/20 text-[#3A0F34] text-[10px] font-bold border border-[#EAAA00]/30">
                     ● Interactive
                   </span>
                 </div>
 
                 <div className="flex items-center space-x-1.5">
-                  <span className="text-[11px] text-gray-400 hidden sm:inline">Explore:</span>
+                  <span className="text-[11px] text-[#3A0F34]/50 hidden sm:inline">Explore:</span>
                   {[1, 2, 3, 4, 5, 6].map((num) => (
                     <button
                       key={num}
                       onClick={() => setActiveNumber(num)}
                       className={`w-6 h-6 rounded-md text-[11px] font-bold font-mono transition-all cursor-pointer ${
                         activeNumber === num
-                          ? 'bg-[#FF791F] text-white shadow-xs scale-105'
-                          : 'bg-white text-gray-700 border border-gray-200 hover:bg-[#DCEFEF] hover:text-[#167D7F]'
+                          ? 'bg-[#EAAA00] text-[#3A0F34] shadow-xs scale-105'
+                          : 'bg-[#C6D0D9]/40 text-[#3A0F34] border border-[#3A0F34]/15 hover:bg-[#EAAA00]/20'
                       }`}
                       aria-label={`Jump to landmark ${num}`}
                       title={`Jump to landmark ${num}`}
@@ -157,26 +157,26 @@ export const CampusExplorer: React.FC = () => {
 
               {/* Scalable Vector Isometric Campus Map Container */}
               <div 
-                className="relative w-full rounded-2xl overflow-hidden border border-[#D4E3EA] bg-[#EBF3F7] shadow-inner select-none group"
+                className="relative w-full rounded-2xl overflow-hidden border border-[#3A0F34]/15 bg-[#EBF3F7] shadow-inner select-none group"
                 style={{ aspectRatio: '1000 / 580' }}
               >
                 {/* 
                   High-Definition Isometric Campus Map:
                   Authentic 30° vector isometric layout with crisp buildings, roads, greenery, and running track.
                   Exactly 6 numbered pins (1 to 6) with ZERO duplicates.
-                  Active pin highlighted in Signal Orange (#F97316), inactive pins in Professional Teal (#167D7F).
+                  Active pin highlighted in Marigold (#EAAA00), inactive pins in Deep Aubergine (#3A0F34).
                 */}
                 <CampusMapVector activeNumber={activeNumber} onSelectPin={setActiveNumber} />
 
                 {/* Compass Rose Indicator in top-right corner */}
-                <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-white/80 backdrop-blur-xs text-[10px] font-mono text-gray-500 border border-white/60 shadow-xs pointer-events-none flex items-center space-x-1">
+                <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-white/80 backdrop-blur-xs text-[10px] font-mono text-[#3A0F34]/70 border border-white/60 shadow-xs pointer-events-none flex items-center space-x-1">
                   <span>N</span>
-                  <span className="text-[#00A9C7]">↗</span>
+                  <span className="text-[#EAAA00]">↗</span>
                 </div>
 
                 {/* Bottom Helper Bar */}
-                <div className="absolute bottom-2.5 left-3 px-2.5 py-1 rounded-md bg-white/85 backdrop-blur-xs text-[11px] font-sans text-gray-600 border border-white/60 shadow-xs pointer-events-none flex items-center space-x-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#FF791F]" />
+                <div className="absolute bottom-2.5 left-3 px-2.5 py-1 rounded-md bg-white/85 backdrop-blur-xs text-[11px] font-sans text-[#3A0F34]/80 border border-white/60 shadow-xs pointer-events-none flex items-center space-x-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#EAAA00]" />
                   <span>Click any landmark pin to inspect</span>
                 </div>
               </div>
@@ -184,71 +184,71 @@ export const CampusExplorer: React.FC = () => {
             </div>
 
             {/* Right Column (5 cols): Description Panel for Selected Location (Spacious, Complete Name, No Truncation) */}
-            <div className="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 border border-gray-200/80 shadow-xs flex flex-col justify-between space-y-5 animate-fadeIn">
+            <div className="lg:col-span-5 bg-[#F7F9FB] rounded-2xl p-6 sm:p-7 border border-[#3A0F34]/15 shadow-xs flex flex-col justify-between space-y-5 animate-fadeIn">
               
               <div className="space-y-4">
                 {/* Meta Header: Number Badge + Icon + Landmark Badge */}
                 <div className="flex items-center justify-between pb-1">
                   <div className="flex items-center space-x-3">
                     {/* Prominent Number Badge */}
-                    <div className="w-8 h-8 rounded-full bg-[#FF791F] text-white font-extrabold text-sm flex items-center justify-center shrink-0 shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#EAAA00] text-[#3A0F34] font-extrabold text-sm flex items-center justify-center shrink-0 shadow-sm">
                       {selectedItem.number}
                     </div>
 
                     {/* Role Icon Box */}
-                    <div className="w-11 h-11 rounded-2xl bg-[#FFF7ED] border border-[#FFEDD5] flex items-center justify-center shrink-0 shadow-xs">
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-[#3A0F34]/15 flex items-center justify-center shrink-0 shadow-xs">
                       {renderRoleIcon(selectedItem.iconType)}
                     </div>
                   </div>
 
                   {/* Landmark Location Tag */}
-                  <span className="px-3 py-1 rounded-full bg-[#DCEFEF] text-[#167D7F] text-xs font-bold font-mono border border-[#BCE4E6]">
+                  <span className="px-3 py-1 rounded-full bg-[#3A0F34] text-[#EAAA00] text-xs font-bold font-mono">
                     Landmark 0{selectedItem.number}
                   </span>
                 </div>
 
                 {/* Complete Organization Title - Full width, allows natural 2-line wrap with ZERO truncation */}
                 <div className="space-y-1">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0B1F33] leading-snug font-display break-words">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#3A0F34] leading-snug font-display break-words">
                     {selectedItem.organization}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-500 font-sans font-medium">
+                  <p className="text-xs sm:text-sm text-[#3A0F34]/70 font-sans font-medium">
                     {selectedItem.tagline}
                   </p>
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-gray-200/80" />
+                <div className="h-px bg-[#3A0F34]/15" />
 
                 {/* My Role Section */}
                 <div className="space-y-1.5">
-                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#3A0F34]/60">
                     My Role
                   </div>
-                  <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-[#FFF7ED] border border-[#FFEDD5] text-[#9A3412] text-xs sm:text-sm font-extrabold">
-                    <User className="w-4 h-4 text-[#FF791F]" />
+                  <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#3A0F34]/15 text-[#3A0F34] text-xs sm:text-sm font-extrabold">
+                    <User className="w-4 h-4 text-[#EAAA00]" />
                     <span>{selectedItem.role}</span>
                   </div>
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-gray-200/80" />
+                <div className="h-px bg-[#3A0F34]/15" />
 
                 {/* About Section */}
                 <div className="space-y-1.5">
-                  <div className="text-xs font-extrabold uppercase tracking-wider text-[#167D7F]">
+                  <div className="text-xs font-extrabold uppercase tracking-wider text-[#3A0F34]">
                     About
                   </div>
-                  <p className="text-sm text-gray-700 font-sans leading-relaxed">
+                  <p className="text-sm text-[#3A0F34]/80 font-sans leading-relaxed">
                     {selectedItem.about}
                   </p>
                 </div>
               </div>
 
               {/* Bottom Subtle Navigation Status */}
-              <div className="pt-3 border-t border-gray-200/70 text-[11px] font-mono text-gray-400 flex items-center justify-between">
+              <div className="pt-3 border-t border-[#3A0F34]/15 text-[11px] font-mono text-[#3A0F34]/60 flex items-center justify-between">
                 <span>Campus Leadership Node</span>
-                <span className="text-[#167D7F] font-semibold">{activeNumber} of 6 active</span>
+                <span className="text-[#3A0F34] font-semibold">{activeNumber} of 6 active</span>
               </div>
 
             </div>

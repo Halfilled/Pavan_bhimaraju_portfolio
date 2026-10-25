@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Send, Sparkles, X, Minus, User, Code, FolderGit2, Users } from 'lucide-react';
-import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 interface Message {
   sender: 'user' | 'agent';
@@ -44,9 +43,10 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
   if (!isOpen) return null;
 
   const getAgentResponse = (query: string): { text: string; links?: { label: string; url: string }[] } => {
-    const q = query.toLowerCase();
+    const q = query.toLowerCase().trim();
 
-    if (q.includes('gitguardian') || q.includes('security') || q.includes('agentic')) {
+    // 1. Specific GitGuardian / Code Security query
+    if (q.includes('gitguardian') || q.includes('security review') || q.includes('agentic')) {
       return {
         text: "GitGuardian AI is Pavan's signature AI engineering project: an agentic code security review platform. It orchestrates specialized agents using LangGraph for static analysis, security auditing, and architecture evaluation. Built with Django, DRF, LangGraph, LangChain, Celery, Redis, and OpenAI, it accepts GitHub URLs or ZIP files, processes scans asynchronously, and generates downloadable PDF reports.",
         links: [
@@ -56,19 +56,22 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
       };
     }
 
-    if (q.includes('project') || q.includes('built') || q.includes('mostly')) {
+    // 2. Question: “What projects have I built?” / Projects query
+    if (q.includes('project') || q.includes('built') || q.includes('application') || q.includes('portfolio work') || q.includes('hospital queue') || q.includes('chat app') || q.includes('wellness app')) {
       return {
-        text: "Pavan has engineered several real-world applications:\n1. GitGuardian AI — Agentic AI code security review platform (LangGraph, Celery, Redis, OpenAI).\n2. Smart Hospital Queue & Appointment System — Distributed queue management platform (Django, PostgreSQL, Redis, Celery).\n3. Healthcare Management System — Full-stack platform with Stripe/PayPal payments & RBAC.\n4. Teen Wellness App — Habit streaks and youth mental wellness analytics from his TEKNOV8R internship.\n5. Real-Time Chat Application — Full-duplex WebSocket messaging engine (Django Channels & Tailwind).",
+        text: "Pavan has engineered several real-world applications across AI and scalable backend systems:\n\n• **Healthcare Management System**: A full-stack clinical practice portal featuring role-based access control (RBAC), multi-doctor appointment scheduling, Stripe and PayPal payment integration, and automated invoice delivery.\n\n• **Teen Wellness App**: A mobile wellness companion developed during his TEKNOV8R internship, delivering habit-tracking streaks, teenage mental wellness analytics, and responsive UI components.\n\n• **Real-Time Chat Application**: A full-duplex WebSocket messaging engine built with Django Channels and ASGI, providing sub-20ms broadcast latency, multi-room channels, and persistent PostgreSQL chat history.\n\n• **GitGuardian AI**: An autonomous agentic code security review platform orchestrating specialized LangGraph agents for static AST inspection, security vulnerability scoring, and automated PDF remediation reports.\n\n• **Smart Hospital Queue & Appointment Management System**: A distributed hospital queue orchestration platform managing patient appointments, live queue token displays, automated doctor room assignments, and SMS alerts via Redis and Celery.",
         links: [
           { label: 'GitGuardian AI Repo', url: 'https://github.com/Pavan8930/gitguardian-ai' },
-          { label: 'Hospital Queue Repo', url: 'https://github.com/Pavan8930/hospital-queue-system' }
+          { label: 'Hospital Queue Repo', url: 'https://github.com/Pavan8930/hospital-queue-system' },
+          { label: 'Jump to Project Browser', url: '#projects' }
         ]
       };
     }
 
-    if (q.includes('technology') || q.includes('stack') || q.includes('use') || q.includes('skill')) {
+    // 3. Question: “What technologies do I use?” / Technologies query
+    if (q.includes('technolog') || q.includes('stack') || q.includes('skill') || q.includes('tools') || q.includes('languages') || (q.includes('what') && q.includes('use')) || q.includes('what tech')) {
       return {
-        text: "Pavan's technical repertoire spans:\n• AI & Data: LangGraph, LangChain, OpenAI API, Python, NumPy, Pandas.\n• Programming & CS: Python (DSA & OOP), JavaScript (ES6+), SQL, Operating Systems, Computer Networks.\n• Web & Distributed: Django, Django REST Framework, Flask, Celery, Redis, WebSockets (Channels), Tailwind CSS, Bootstrap.\n• Developer Tools: Git, GitHub, Docker, VS Code, Android Studio.\nHe actively solves Data Structures & Algorithms challenges on LeetCode using Python.",
+        text: "I work with Python, JavaScript, SQL, HTML, and CSS. My main frameworks include Django, Django REST Framework, and Flask, along with Bootstrap and Tailwind CSS. I also use Git and GitHub, and work with libraries such as NumPy and Pandas. My key technical interests include AI/LLMs, backend development, and Data Structures & Algorithms.",
         links: [
           { label: 'View LeetCode Profile', url: 'https://leetcode.com/u/pavanbhimaraju/' },
           { label: 'Explore Skill Constellation', url: '#skills' }
@@ -76,6 +79,29 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
       };
     }
 
+    // 4. AI & LLMs specific query
+    if (q.includes('ai & llm') || q.includes('ai & llms') || q.includes('llm')) {
+      return {
+        text: "In AI & LLMs, Pavan develops agentic workflows and multi-agent systems using LangGraph, LangChain, and the OpenAI API. His flagship AI project, GitGuardian AI, coordinates autonomous agents to execute static code analysis, security auditing, and automated remediation reporting.",
+        links: [
+          { label: 'GitGuardian AI Repository', url: 'https://github.com/Pavan8930/gitguardian-ai' },
+          { label: 'Explore AI & Data Skills', url: '#skills' }
+        ]
+      };
+    }
+
+    // 5. Backend Systems specific query
+    if (q.includes('backend system') || q.includes('backend')) {
+      return {
+        text: "In Backend Systems, Pavan specializes in building scalable, distributed web architectures using Python, Django, Django REST Framework, Flask, PostgreSQL, Redis, Celery, and WebSockets (Django Channels). He focuses on asynchronous background task queues, real-time messaging, and robust database design.",
+        links: [
+          { label: 'Hospital Queue System Repo', url: 'https://github.com/Pavan8930/hospital-queue-system' },
+          { label: 'Explore Web & Backend Skills', url: '#skills' }
+        ]
+      };
+    }
+
+    // 6. Leadership Query
     if (q.includes('leadership') || q.includes('ecell') || q.includes('iit bombay') || q.includes('bizverve') || q.includes('street cause')) {
       return {
         text: "Pavan holds major leadership credentials:\n• Vice President, BiZverve (Business & Entrepreneurship Club): Organized an inter-college summit for 250+ participants across Vizag.\n• E-Cell President: Led the ANITS team to the Grand Finals of the National Entrepreneurship Challenge at IIT Bombay.\n• IIC Coordinator: Spearheaded Department of CSE innovation and patent awareness programs.\n• Divisional President & Executive Board Member, Street Cause NGO: Coordinated city-wide social impact and student community welfare.",
@@ -86,7 +112,8 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
       };
     }
 
-    if (q.includes('goal') || q.includes('about') || q.includes('career') || q.includes('who')) {
+    // 7. General About / Bio / Career Query
+    if (q.includes('goal') || q.includes('about') || q.includes('career') || q.includes('who') || q.includes('know about me') || q.includes('background')) {
       return {
         text: "Pavan is a Computer Science Engineering student (2023–2027) with an 8.27 CGPA at ANITS, Visakhapatnam. He specializes in AI systems, scalable backend architectures, and algorithmic problem solving. He is eager to take on Software Engineering, Full-Stack, or AI-focused roles where he can deploy reliable, high-performance distributed solutions.",
         links: [
@@ -134,50 +161,50 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
   const suggestedCards = [
     {
       label: "Want to know about me?",
-      icon: <User className="w-4 h-4 text-[#00A9C7]" />,
-      bg: "bg-[#DCEFEF]/70",
-      border: "border-[#BCE4E6]",
+      icon: <User className="w-4 h-4 text-[#EAAA00]" />,
+      bg: "bg-[#C6D0D9]/40",
+      border: "border-[#3A0F34]/15",
       query: "Want to know about me?"
     },
     {
-      label: "What technologies do I mostly use?",
-      icon: <Code className="w-4 h-4 text-[#167D7F]" />,
+      label: "What technologies do I use?",
+      icon: <Code className="w-4 h-4 text-[#3A0F34]" />,
       bg: "bg-white",
-      border: "border-gray-200",
-      query: "What technologies do he mostly use?"
+      border: "border-[#3A0F34]/15",
+      query: "What technologies do I use?"
     },
     {
-      label: "What projects has Pavan built?",
-      icon: <FolderGit2 className="w-4 h-4 text-[#FF791F]" />,
-      bg: "bg-[#FFF4EC]",
-      border: "border-[#FFE5D2]",
-      query: "What projects has Pavan built?"
+      label: "What projects have I built?",
+      icon: <FolderGit2 className="w-4 h-4 text-[#EAAA00]" />,
+      bg: "bg-[#C6D0D9]/40",
+      border: "border-[#3A0F34]/15",
+      query: "What projects have I built?"
     },
     {
       label: "Tell me about my leadership experience.",
-      icon: <Users className="w-4 h-4 text-[#167D7F]" />,
-      bg: "bg-[#E6F9F5]",
-      border: "border-[#C9F3EB]",
-      query: "Tell me about his leadership experience."
+      icon: <Users className="w-4 h-4 text-[#3A0F34]" />,
+      bg: "bg-white",
+      border: "border-[#3A0F34]/15",
+      query: "Tell me about my leadership experience."
     }
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      {/* Modal Container matching reference pick 5 exactly */}
-      <div className="relative w-full max-w-3xl bg-[#F1F3F5] rounded-3xl shadow-2xl border border-[#5C6068] overflow-hidden flex flex-col max-h-[85vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#3A0F34]/70 backdrop-blur-md animate-fadeIn">
+      {/* Modal Container */}
+      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-[#3A0F34]/20 overflow-hidden flex flex-col max-h-[85vh]">
         
-        {/* Vibrant Gradient Header */}
-        <div className="bg-gradient-to-r from-[#00A9C7] to-[#167D7F] text-white px-6 py-4 flex items-center justify-between">
+        {/* Header */}
+        <div className="bg-[#3A0F34] text-white px-6 py-4 flex items-center justify-between border-b border-white/10">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-              <Bot className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
+              <Bot className="w-5 h-5 text-[#EAAA00]" />
             </div>
             <div>
-              <h3 className="font-extrabold text-sm sm:text-base tracking-wide">
+              <h3 className="font-extrabold text-sm sm:text-base tracking-wide text-white">
                 PAVAN'S AI PERSONAL AGENT
               </h3>
-              <p className="text-[11px] text-white/80 font-sans">
+              <p className="text-[11px] text-white/70 font-sans">
                 Knowledge Base: Projects, Skills, Leadership & Experience
               </p>
             </div>
@@ -186,13 +213,15 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
           <div className="flex items-center space-x-2">
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="Minimize modal"
             >
               <Minus className="w-4 h-4" />
             </button>
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="Close modal"
             >
               <X className="w-4 h-4" />
             </button>
@@ -200,22 +229,22 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
         </div>
 
         {/* Message Feed */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-[#F1F3F5]">
+        <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-[#C6D0D9]/20">
           {messages.map((msg, idx) => (
             <div
               key={idx}
               className={`flex items-start space-x-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {msg.sender === 'agent' && (
-                <div className="w-8 h-8 rounded-lg bg-[#00A9C7] text-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#3A0F34] text-[#EAAA00] flex items-center justify-center shrink-0 mt-1 shadow-sm">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
 
               <div className={`max-w-[85%] ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
                 {msg.sender === 'agent' && (
-                  <div className="flex items-center space-x-1.5 text-[11px] text-gray-500 font-medium mb-1">
-                    <span className="font-bold text-gray-800">PAVAN'S AI AGENT</span>
+                  <div className="flex items-center space-x-1.5 text-[11px] text-[#3A0F34]/60 font-medium mb-1">
+                    <span className="font-bold text-[#3A0F34]">PAVAN'S AI AGENT</span>
                     <span>• {msg.timestamp}</span>
                   </div>
                 )}
@@ -223,15 +252,15 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
                 <div
                   className={`p-4 rounded-2xl text-sm leading-relaxed ${
                     msg.sender === 'user'
-                      ? 'bg-[#00A9C7] text-white font-medium rounded-br-sm shadow-sm'
-                      : 'bg-white text-gray-800 border-2 border-[#00A9C7]/20 border-l-4 border-l-[#00A9C7] shadow-soft-card rounded-tl-sm'
+                      ? 'bg-[#3A0F34] text-white font-medium rounded-br-sm shadow-sm'
+                      : 'bg-white text-[#3A0F34] border border-[#3A0F34]/15 border-l-4 border-l-[#EAAA00] shadow-sm rounded-tl-sm'
                   }`}
                 >
                   <p className="whitespace-pre-line">{msg.text}</p>
 
                   {/* Links */}
                   {msg.links && msg.links.length > 0 && (
-                    <div className="mt-3 pt-2.5 border-t border-gray-100 flex flex-wrap gap-2">
+                    <div className="mt-3 pt-2.5 border-t border-[#3A0F34]/10 flex flex-wrap gap-2">
                       {msg.links.map((link, lIdx) => (
                         <a
                           key={lIdx}
@@ -241,7 +270,7 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
                           onClick={() => {
                             if (link.url.startsWith('#')) onClose();
                           }}
-                          className="inline-flex items-center space-x-1 px-3 py-1 bg-[#DCEFEF] hover:bg-[#00A9C7] hover:text-white text-[#167D7F] text-xs font-bold rounded-lg transition-colors"
+                          className="inline-flex items-center space-x-1 px-3 py-1 bg-[#C6D0D9] hover:bg-[#EAAA00] text-[#3A0F34] text-xs font-bold rounded-lg transition-colors"
                         >
                           <span>{link.label}</span>
                           <span>→</span>
@@ -255,21 +284,21 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
           ))}
 
           {isTyping && (
-            <div className="flex items-center space-x-2 text-xs text-gray-400 font-medium pl-11">
-              <span className="w-2 h-2 rounded-full bg-[#00A9C7] animate-bounce" />
-              <span className="w-2 h-2 rounded-full bg-[#167D7F] animate-bounce [animation-delay:0.2s]" />
-              <span className="w-2 h-2 rounded-full bg-[#FF791F] animate-bounce [animation-delay:0.4s]" />
-              <span className="ml-1 text-gray-500">Pavan's agent is typing...</span>
+            <div className="flex items-center space-x-2 text-xs text-[#3A0F34]/60 font-medium pl-11">
+              <span className="w-2 h-2 rounded-full bg-[#3A0F34] animate-bounce" />
+              <span className="w-2 h-2 rounded-full bg-[#EAAA00] animate-bounce [animation-delay:0.2s]" />
+              <span className="w-2 h-2 rounded-full bg-[#4E1746] animate-bounce [animation-delay:0.4s]" />
+              <span className="ml-1 text-[#3A0F34]/70">Pavan's agent is typing...</span>
             </div>
           )}
 
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Suggested Questions Grid matching reference 5 */}
-        <div className="p-4 bg-white border-t border-gray-200">
-          <div className="flex items-center space-x-1.5 text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF791F]" />
+        {/* Suggested Questions Grid */}
+        <div className="p-4 bg-white border-t border-[#3A0F34]/15">
+          <div className="flex items-center space-x-1.5 text-[11px] font-bold text-[#3A0F34]/60 uppercase tracking-wider mb-2.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#EAAA00]" />
             <span>SUGGESTED QUESTIONS:</span>
           </div>
 
@@ -284,11 +313,11 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
                   <div className="p-1.5 bg-white rounded-lg shadow-xs shrink-0">
                     {card.icon}
                   </div>
-                  <span className="text-xs font-bold text-gray-800 leading-tight">
+                  <span className="text-xs font-bold text-[#3A0F34] leading-tight">
                     {card.label}
                   </span>
                 </div>
-                <span className="text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all text-xs">
+                <span className="text-[#3A0F34]/40 group-hover:text-[#EAAA00] group-hover:translate-x-0.5 transition-all text-xs">
                   →
                 </span>
               </button>
@@ -296,25 +325,25 @@ export const PersonalAgentModal: React.FC<PersonalAgentModalProps> = ({
           </div>
         </div>
 
-        {/* Question Input Field matching reference 5 */}
+        {/* Question Input Field */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleUserSubmit(inputValue);
           }}
-          className="p-4 bg-[#F1F3F5] border-t border-gray-200 flex items-center space-x-3"
+          className="p-4 bg-[#E8EDF2] border-t border-[#3A0F34]/15 flex items-center space-x-3"
         >
           <input
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Ask anything about Pavan’s projects, skills, leadership, or background..."
-            className="flex-1 bg-white border border-gray-300 rounded-2xl px-5 py-3 text-xs sm:text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#00A9C7] focus:ring-1 focus:ring-[#00A9C7] transition-all"
+            className="flex-1 bg-white border border-[#3A0F34]/20 rounded-2xl px-5 py-3 text-xs sm:text-sm text-[#3A0F34] placeholder-[#3A0F34]/40 focus:outline-none focus:border-[#EAAA00] focus:ring-1 focus:ring-[#EAAA00] transition-all"
           />
           <button
             type="submit"
             disabled={!inputValue.trim()}
-            className="px-6 py-3 bg-[#00A9C7] disabled:bg-gray-300 disabled:text-gray-500 hover:bg-[#0092ad] text-white font-extrabold text-xs uppercase tracking-wider rounded-2xl transition-all shadow-md flex items-center space-x-2 shrink-0 cursor-pointer"
+            className="px-6 py-3 bg-[#EAAA00] disabled:bg-gray-200 disabled:text-gray-400 hover:bg-[#D49800] text-[#3A0F34] font-black text-xs uppercase tracking-wider rounded-2xl transition-all shadow-md flex items-center space-x-2 shrink-0 cursor-pointer"
           >
             <span>ASK</span>
             <Send className="w-3.5 h-3.5" />

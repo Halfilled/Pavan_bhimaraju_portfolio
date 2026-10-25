@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight, X, ExternalLink, Award, CheckCircle2, Calendar, Building, Sparkles, MapPin } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Building, Calendar, CheckCircle2 } from 'lucide-react';
 
 interface AchievementPoster {
   id: string;
@@ -36,15 +36,15 @@ export const AchievementsGallery: React.FC = () => {
   const [selectedPoster, setSelectedPoster] = useState<AchievementPoster | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // 5 Verified Cards with their original individual pastel color themes preserved
+  // 5 Verified Cards harmonized with Ice Silver, Deep Aubergine, and Marigold
   const posters: AchievementPoster[] = [
     {
       id: 'national-entrepreneurship-challenge',
       badgeLabel: 'IIT BOMBAY E-CELL',
       headlineLines: ['NATIONAL', 'ENTREPRENEURSHIP', 'CHALLENGE'],
-      headlineColor: 'text-[#0B1F33]',
+      headlineColor: 'text-[#3A0F34]',
       headlineHighlightWord: 'CHALLENGE',
-      headlineHighlightColor: 'text-[#D97706]',
+      headlineHighlightColor: 'text-[#EAAA00]',
       headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
         'IIT Bombay',
@@ -52,15 +52,15 @@ export const AchievementsGallery: React.FC = () => {
         'Venture Incubation'
       ],
       theme: {
-        bg: 'bg-gradient-to-br from-[#FFFDF7] via-[#FFF8E7] to-[#FEF0D0]',
-        border: 'border-[#FDE68A]',
-        badgeBg: 'bg-[#FEF3C7]',
-        badgeText: 'text-[#92400E]',
-        stampColor: '#D97706',
-        accentGlow: 'rgba(245, 158, 11, 0.15)',
-        decorColor: '#D97706',
-        cardTextColor: 'text-[#0B1F33]',
-        subTextColor: 'text-[#92400E]'
+        bg: 'bg-gradient-to-br from-[#FFFFFF] via-[#F4F7F9] to-[#DDE3E8]',
+        border: 'border-[#3A0F34]/15 hover:border-[#EAAA00]',
+        badgeBg: 'bg-[#3A0F34]',
+        badgeText: 'text-[#EAAA00]',
+        stampColor: '#EAAA00',
+        accentGlow: 'rgba(234, 170, 0, 0.15)',
+        decorColor: '#EAAA00',
+        cardTextColor: 'text-[#3A0F34]',
+        subTextColor: 'text-[#3A0F34]'
       },
       modal: {
         title: 'National Entrepreneurship Challenge (NEC)',
@@ -81,9 +81,9 @@ export const AchievementsGallery: React.FC = () => {
       id: 'bizverve-summit',
       badgeLabel: 'BIZVERVE · ANITS',
       headlineLines: ['BIZVERVE', 'ENTREPRENEURSHIP', 'SUMMIT'],
-      headlineColor: 'text-[#0B1F33]',
+      headlineColor: 'text-[#3A0F34]',
       headlineHighlightWord: 'SUMMIT',
-      headlineHighlightColor: 'text-[#F97316]',
+      headlineHighlightColor: 'text-[#EAAA00]',
       headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
         'Vice President · BiZverve',
@@ -91,15 +91,15 @@ export const AchievementsGallery: React.FC = () => {
         'Business & Skill Conclave'
       ],
       theme: {
-        bg: 'bg-gradient-to-br from-[#FFF9F6] via-[#FFF0E8] to-[#FED7C8]',
-        border: 'border-[#FFC7B0]',
-        badgeBg: 'bg-[#FFEDD5]',
-        badgeText: 'text-[#C2410C]',
-        stampColor: '#EA580C',
-        accentGlow: 'rgba(234, 88, 12, 0.15)',
-        decorColor: '#F97316',
-        cardTextColor: 'text-[#0B1F33]',
-        subTextColor: 'text-[#C2410C]'
+        bg: 'bg-gradient-to-br from-[#FFFFFF] via-[#F6F4F7] to-[#E9DEE7]',
+        border: 'border-[#3A0F34]/15 hover:border-[#EAAA00]',
+        badgeBg: 'bg-[#EAAA00]/20',
+        badgeText: 'text-[#3A0F34]',
+        stampColor: '#3A0F34',
+        accentGlow: 'rgba(58, 15, 52, 0.12)',
+        decorColor: '#3A0F34',
+        cardTextColor: 'text-[#3A0F34]',
+        subTextColor: 'text-[#3A0F34]'
       },
       modal: {
         title: 'BiZverve Entrepreneurship Summit',
@@ -120,9 +120,9 @@ export const AchievementsGallery: React.FC = () => {
       id: 'web-dev-internship',
       badgeLabel: 'TEKNOV8R INTERNSHIP',
       headlineLines: ['WEB', 'DEVELOPMENT', 'INTERNSHIP'],
-      headlineColor: 'text-[#0B1F33]',
+      headlineColor: 'text-[#3A0F34]',
       headlineHighlightWord: 'INTERNSHIP',
-      headlineHighlightColor: 'text-[#2563EB]',
+      headlineHighlightColor: 'text-[#EAAA00]',
       headlineSize: 'text-4xl sm:text-5xl lg:text-[3.25rem]',
       supportingItems: [
         'TEKNOV8R · May–July 2025',
@@ -130,15 +130,15 @@ export const AchievementsGallery: React.FC = () => {
         'UI Screens & Core Features'
       ],
       theme: {
-        bg: 'bg-gradient-to-br from-[#F8FAFF] via-[#EEF4FF] to-[#DBEAFE]',
-        border: 'border-[#BFDBFE]',
-        badgeBg: 'bg-[#DBEAFE]',
-        badgeText: 'text-[#1E40AF]',
-        stampColor: '#2563EB',
-        accentGlow: 'rgba(37, 99, 235, 0.15)',
-        decorColor: '#3B82F6',
-        cardTextColor: 'text-[#0B1F33]',
-        subTextColor: 'text-[#1E40AF]'
+        bg: 'bg-gradient-to-br from-[#FFFFFF] via-[#F4F7F9] to-[#DDE3E8]',
+        border: 'border-[#3A0F34]/15 hover:border-[#EAAA00]',
+        badgeBg: 'bg-[#3A0F34]',
+        badgeText: 'text-[#EAAA00]',
+        stampColor: '#EAAA00',
+        accentGlow: 'rgba(234, 170, 0, 0.15)',
+        decorColor: '#EAAA00',
+        cardTextColor: 'text-[#3A0F34]',
+        subTextColor: 'text-[#3A0F34]'
       },
       modal: {
         title: 'Web Development Internship',
@@ -159,9 +159,9 @@ export const AchievementsGallery: React.FC = () => {
       id: 'iic-innovation-coordinator',
       badgeLabel: 'IIC · ANITS',
       headlineLines: ['INNOVATION', 'AND', 'ENTREPRENEURSHIP'],
-      headlineColor: 'text-[#0B1F33]',
+      headlineColor: 'text-[#3A0F34]',
       headlineHighlightWord: 'INNOVATION',
-      headlineHighlightColor: 'text-[#00A9C2]',
+      headlineHighlightColor: 'text-[#EAAA00]',
       headlineSize: 'text-3xl sm:text-4xl lg:text-[2.65rem]',
       supportingItems: [
         'IIC Coordinator · ANITS',
@@ -169,15 +169,15 @@ export const AchievementsGallery: React.FC = () => {
         'Creative Solutions & Ideation'
       ],
       theme: {
-        bg: 'bg-gradient-to-br from-[#F6FBFC] via-[#EBF7F9] to-[#D5F0F5]',
-        border: 'border-[#A5E3EB]',
-        badgeBg: 'bg-[#D5F0F5]',
-        badgeText: 'text-[#0E7490]',
-        stampColor: '#00A9C2',
-        accentGlow: 'rgba(0, 169, 194, 0.15)',
-        decorColor: '#00A9C2',
-        cardTextColor: 'text-[#0B1F33]',
-        subTextColor: 'text-[#0E7490]'
+        bg: 'bg-gradient-to-br from-[#FFFFFF] via-[#F6F4F7] to-[#E9DEE7]',
+        border: 'border-[#3A0F34]/15 hover:border-[#EAAA00]',
+        badgeBg: 'bg-[#EAAA00]/20',
+        badgeText: 'text-[#3A0F34]',
+        stampColor: '#3A0F34',
+        accentGlow: 'rgba(58, 15, 52, 0.12)',
+        decorColor: '#3A0F34',
+        cardTextColor: 'text-[#3A0F34]',
+        subTextColor: 'text-[#3A0F34]'
       },
       modal: {
         title: "Institution's Innovation Council (IIC)",
@@ -198,9 +198,9 @@ export const AchievementsGallery: React.FC = () => {
       id: 'ecell-president',
       badgeLabel: 'E-CELL ANITS',
       headlineLines: ['E-CELL', 'CAMPUS', 'LEADERSHIP'],
-      headlineColor: 'text-[#0B1F33]',
+      headlineColor: 'text-[#3A0F34]',
       headlineHighlightWord: 'LEADERSHIP',
-      headlineHighlightColor: 'text-[#0D9488]',
+      headlineHighlightColor: 'text-[#EAAA00]',
       headlineSize: 'text-4xl sm:text-5xl lg:text-[3.25rem]',
       supportingItems: [
         'E-Cell President',
@@ -208,15 +208,15 @@ export const AchievementsGallery: React.FC = () => {
         'Entrepreneurship Ecosystem'
       ],
       theme: {
-        bg: 'bg-gradient-to-br from-[#F6FDFB] via-[#E6F8F4] to-[#D1F2EA]',
-        border: 'border-[#99EAD8]',
-        badgeBg: 'bg-[#CCFBF1]',
-        badgeText: 'text-[#0F766E]',
-        stampColor: '#0F766E',
-        accentGlow: 'rgba(13, 148, 136, 0.15)',
-        decorColor: '#14B8A6',
-        cardTextColor: 'text-[#0B1F33]',
-        subTextColor: 'text-[#0F766E]'
+        bg: 'bg-gradient-to-br from-[#FFFFFF] via-[#F4F7F9] to-[#DDE3E8]',
+        border: 'border-[#3A0F34]/15 hover:border-[#EAAA00]',
+        badgeBg: 'bg-[#3A0F34]',
+        badgeText: 'text-[#EAAA00]',
+        stampColor: '#EAAA00',
+        accentGlow: 'rgba(234, 170, 0, 0.15)',
+        decorColor: '#EAAA00',
+        cardTextColor: 'text-[#3A0F34]',
+        subTextColor: 'text-[#3A0F34]'
       },
       modal: {
         title: 'Entrepreneurship Cell (E-Cell) Leadership',
@@ -243,43 +243,35 @@ export const AchievementsGallery: React.FC = () => {
     }
   };
 
-  // Staggered vertical alternating offset classes matching the reference image:
-  // Card 0: higher (-translate-y-6)
-  // Card 1: lower (+translate-y-6)
-  // Card 2: higher (-translate-y-6)
-  // Card 3: lower (+translate-y-6)
-  // Card 4: higher (-translate-y-6)
+  // Staggered vertical alternating offset classes:
   const getStaggerClass = (index: number) => {
     return index % 2 === 0 
       ? '-translate-y-3 sm:-translate-y-6 lg:-translate-y-7' 
       : 'translate-y-3 sm:translate-y-6 lg:translate-y-7';
   };
 
-  // Render stylized isometric abstract artwork inside cards to match the reference's editorial flair
+  // Render stylized isometric abstract artwork inside cards
   const renderCardArtwork = (id: string, color: string) => {
     switch (id) {
       case 'national-entrepreneurship-challenge':
-        // Ascending geometric staircase / trophy beacon
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <polygon points="50,12 82,30 50,48 18,30" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
             <polygon points="18,30 50,48 50,78 18,60" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2.5" />
             <polygon points="82,30 50,48 50,78 82,60" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="2.5" />
-            <circle cx="50" cy="30" r="6" fill="#D97706" />
+            <circle cx="50" cy="30" r="6" fill="#EAAA00" />
           </svg>
         );
       case 'bizverve-summit':
-        // Conclave crest / multi-tiered summit hexagon
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <path d="M50 12L85 32V68L50 88L15 68V32L50 12Z" stroke={color} strokeWidth="2.5" fill="white" fillOpacity="0.7" />
             <polygon points="50,25 75,40 75,65 50,80 25,65 25,40" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="2" />
             <circle cx="50" cy="50" r="12" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2" />
-            <circle cx="50" cy="50" r="5" fill="#EA580C" />
+            <circle cx="50" cy="50" r="5" fill="#EAAA00" />
           </svg>
         );
       case 'web-dev-internship':
-        // Isometric 3D component layers / browser cards
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <polygon points="50,10 90,32 50,54 10,32" fill="white" fillOpacity="0.85" stroke={color} strokeWidth="2.5" />
@@ -288,25 +280,23 @@ export const AchievementsGallery: React.FC = () => {
           </svg>
         );
       case 'iic-innovation-coordinator':
-        // Innovation spark / idea prism
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <polygon points="50,15 85,35 50,55 15,35" fill="white" fillOpacity="0.8" stroke={color} strokeWidth="2.5" />
             <polygon points="50,55 85,35 85,75 50,95" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="2.5" />
             <polygon points="50,55 15,35 15,75 50,95" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="2.5" />
-            <circle cx="50" cy="40" r="8" fill="#00A9C2" />
+            <circle cx="50" cy="40" r="8" fill="#EAAA00" />
             <path d="M50 20V26M50 54V60M30 40H36M64 40H70" stroke={color} strokeWidth="2" strokeLinecap="round" />
           </svg>
         );
       case 'ecell-president':
-        // Leadership crown / tiered dais
         return (
           <svg className="w-28 h-28 sm:w-32 sm:h-32 opacity-75" viewBox="0 0 100 100" fill="none">
             <polygon points="50,14 84,34 50,54 16,34" fill="white" fillOpacity="0.85" stroke={color} strokeWidth="2.5" />
             <polygon points="16,34 50,54 50,84 16,64" fill={color} fillOpacity="0.18" stroke={color} strokeWidth="2.5" />
             <polygon points="84,34 50,54 50,84 84,64" fill={color} fillOpacity="0.32" stroke={color} strokeWidth="2.5" />
-            <polygon points="50,22 65,34 50,46 35,34" fill="#0D9488" fillOpacity="0.8" />
-            <circle cx="50" cy="34" r="4" fill="white" />
+            <polygon points="50,22 65,34 50,46 35,34" fill="#3A0F34" fillOpacity="0.8" />
+            <circle cx="50" cy="34" r="4" fill="#EAAA00" />
           </svg>
         );
       default:
@@ -315,36 +305,36 @@ export const AchievementsGallery: React.FC = () => {
   };
 
   return (
-    <section id="achievements" className="py-20 lg:py-28 relative bg-[#36393F] select-none overflow-hidden">
+    <section id="achievements" className="py-20 lg:py-28 relative bg-[#C6D0D9] select-none overflow-hidden">
       
-      {/* Huge Faint Watermark Text echoing reference background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[15vw] font-black uppercase text-white/[0.04] tracking-widest font-poster whitespace-nowrap z-0">
+      {/* Huge Faint Watermark Text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[15vw] font-black uppercase text-[#3A0F34]/[0.04] tracking-widest font-poster whitespace-nowrap z-0">
         AWARDS & HONORS
       </div>
 
-      {/* Standardized container matching Hero, My Skills, My Projects, and Beyond the Code */}
+      {/* Standardized container */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header with Title and Left/Right Carousel Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 mb-12 lg:mb-16 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#F5F7FA] font-display whitespace-nowrap">
-              HONORS & <span className="text-[#00A9C7]">ACHIEVEMENTS</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#3A0F34] font-display whitespace-nowrap">
+              HONORS & <span className="text-[#3A0F34]">ACHIEVEMENTS</span>
             </h2>
-            <div className="h-1.5 w-16 bg-[#FF791F] rounded-full mt-3" />
-            <p className="text-sm sm:text-base text-[#D5D7DC] font-sans mt-2.5">
+            <div className="h-1.5 w-16 bg-[#EAAA00] rounded-full mt-3" />
+            <p className="text-sm sm:text-base text-[#3A0F34]/70 font-sans mt-2.5">
               Distinctions, certifications, competitive finals, and verified leadership milestones.
             </p>
           </div>
 
-          {/* Carousel Arrow Navigation matching Reference */}
+          {/* Carousel Arrow Navigation */}
           <div className="flex items-center space-x-3">
-            <span className="text-xs font-mono text-[#D5D7DC] hidden sm:inline mr-2">
+            <span className="text-xs font-mono text-[#3A0F34]/60 hidden sm:inline mr-2">
               Browse Honors:
             </span>
             <button
               onClick={() => handleScroll('left')}
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#454951] border border-[#5C6068] text-[#F5F7FA] shadow-md hover:bg-[#00A9C7] hover:border-[#00A9C7] hover:text-white transition-all flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#00A9C7]"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-[#3A0F34]/20 text-[#3A0F34] shadow-md hover:bg-[#EAAA00] hover:border-[#EAAA00] hover:text-[#3A0F34] transition-all flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#EAAA00]"
               aria-label="Previous achievement card"
               title="Previous card"
             >
@@ -352,7 +342,7 @@ export const AchievementsGallery: React.FC = () => {
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#454951] border border-[#5C6068] text-[#F5F7FA] shadow-md hover:bg-[#00A9C7] hover:border-[#00A9C7] hover:text-white transition-all flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#00A9C7]"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-[#3A0F34]/20 text-[#3A0F34] shadow-md hover:bg-[#EAAA00] hover:border-[#EAAA00] hover:text-[#3A0F34] transition-all flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#EAAA00]"
               aria-label="Next achievement card"
               title="Next card"
             >
@@ -363,13 +353,7 @@ export const AchievementsGallery: React.FC = () => {
 
       </div>
 
-      {/* 
-        HORIZONTAL STAGGERED POSTER CAROUSEL
-        - Overflow-x scroll with alternating vertical translation (staggered up-and-down).
-        - Softer, lighter pastel tinted cards that blend seamlessly with the portfolio background.
-        - Partial neighbor cards peek at the edges.
-        - Bold, funky, condensed typography that fills the poster.
-      */}
+      {/* HORIZONTAL STAGGERED POSTER CAROUSEL */}
       <div 
         ref={carouselRef}
         className="w-full overflow-x-auto scrollbar-none scroll-smooth pb-16 pt-8 px-4 sm:px-8 lg:px-12 relative z-10"
@@ -394,17 +378,13 @@ export const AchievementsGallery: React.FC = () => {
                     <span className={`inline-block px-2.5 py-1 rounded-md ${poster.theme.badgeBg} ${poster.theme.badgeText} text-[10px] sm:text-[11px] font-mono font-black tracking-wider uppercase border border-black/5 shadow-xs`}>
                       {poster.badgeLabel}
                     </span>
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-gray-500 block pt-0.5 font-semibold">
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-[#3A0F34]/50 block pt-0.5 font-semibold">
                       PAVAN BHIMARAJU · PORTFOLIO
                     </div>
                   </div>
                 </div>
 
-                {/* 
-                  MAIN DISPLAY HEADLINE:
-                  Oversized, bold, funky condensed poster typography stacked across multiple lines
-                  (Bebas Neue / Anton font system)
-                */}
+                {/* MAIN DISPLAY HEADLINE */}
                 <div className="my-auto py-2">
                   <div className="flex flex-col space-y-0 tracking-tight font-poster leading-[0.88] select-none">
                     {poster.headlineLines.map((line, lIdx) => {
@@ -423,13 +403,13 @@ export const AchievementsGallery: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Abstract Geometric Graphic Element echoing the reference */}
+                {/* Abstract Geometric Graphic Element */}
                 <div className="absolute right-4 bottom-24 pointer-events-none transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                   {renderCardArtwork(poster.id, poster.theme.decorColor)}
                 </div>
 
                 {/* Bottom Section: Supporting Text + Interactive Prompt */}
-                <div className="pt-4 border-t border-black/10 relative z-10 space-y-2.5">
+                <div className="pt-4 border-t border-[#3A0F34]/15 relative z-10 space-y-2.5">
                   
                   {/* Verified Supporting Details */}
                   <div className="space-y-0.5">
@@ -445,12 +425,12 @@ export const AchievementsGallery: React.FC = () => {
 
                   {/* Interactive Tap Prompt */}
                   <div className="flex items-center justify-between pt-1">
-                    <span className={`text-[10px] font-mono uppercase tracking-wider font-extrabold ${poster.theme.subTextColor} flex items-center space-x-1 group-hover:text-[#0B1F33] transition-colors`}>
+                    <span className="text-[10px] font-mono uppercase tracking-wider font-extrabold text-[#3A0F34] flex items-center space-x-1 group-hover:text-[#EAAA00] transition-colors">
                       <span>Explore details</span>
                       <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                     </span>
 
-                    <span className="w-2 h-2 rounded-full bg-[#F97316] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#EAAA00] animate-ping" />
                   </div>
 
                 </div>
@@ -462,27 +442,24 @@ export const AchievementsGallery: React.FC = () => {
         </div>
       </div>
 
-      {/* 
-        EXPANDED DEDICATED DETAIL MODAL VIEW
-        Triggered when any poster card is clicked, returning seamlessly on close.
-      */}
+      {/* EXPANDED DEDICATED DETAIL MODAL VIEW */}
       {selectedPoster && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#36393F]/80 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#3A0F34]/70 backdrop-blur-md animate-fadeIn"
           onClick={() => setSelectedPoster(null)}
         >
           <div 
-            className="relative w-full max-w-2xl bg-[#F1F3F5] rounded-3xl shadow-2xl border border-[#5C6068] overflow-hidden flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-[#3A0F34]/20 overflow-hidden flex flex-col max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             
-            {/* Modal Header Banner matching Soft Poster Theme */}
-            <div className={`p-6 sm:p-8 ${selectedPoster.theme.bg} border-b ${selectedPoster.theme.border} relative overflow-hidden text-[#0B1F33]`}>
+            {/* Modal Header Banner */}
+            <div className={`p-6 sm:p-8 ${selectedPoster.theme.bg} border-b border-[#3A0F34]/15 relative overflow-hidden text-[#3A0F34]`}>
               
               {/* Close Button Top Right */}
               <button
                 onClick={() => setSelectedPoster(null)}
-                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-[#FF791F] text-[#0B1F33] hover:text-white shadow-sm flex items-center justify-center transition-colors cursor-pointer focus:outline-none"
+                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-[#EAAA00] text-[#3A0F34] hover:text-[#3A0F34] shadow-sm flex items-center justify-center transition-colors cursor-pointer focus:outline-none"
                 aria-label="Close details"
               >
                 <X className="w-5 h-5" />
@@ -497,7 +474,7 @@ export const AchievementsGallery: React.FC = () => {
                   {selectedPoster.modal.title}
                 </h3>
 
-                <p className="text-sm sm:text-base font-sans font-medium text-gray-700">
+                <p className="text-sm sm:text-base font-sans font-medium text-[#3A0F34]/80">
                   {selectedPoster.modal.subtitle}
                 </p>
               </div>
@@ -513,19 +490,19 @@ export const AchievementsGallery: React.FC = () => {
               
               {/* Metadata Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 flex items-center space-x-3">
-                  <Building className="w-5 h-5 text-[#00A9C7] shrink-0" />
+                <div className="p-3.5 rounded-2xl bg-[#C6D0D9]/30 border border-[#3A0F34]/15 flex items-center space-x-3">
+                  <Building className="w-5 h-5 text-[#EAAA00] shrink-0" />
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-gray-400">Awarding Institution</div>
-                    <div className="text-xs sm:text-sm font-bold text-[#0B1F33]">{selectedPoster.modal.issuer}</div>
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-[#3A0F34]/60">Awarding Institution</div>
+                    <div className="text-xs sm:text-sm font-bold text-[#3A0F34]">{selectedPoster.modal.issuer}</div>
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 flex items-center space-x-3">
-                  <Calendar className="w-5 h-5 text-[#FF791F] shrink-0" />
+                <div className="p-3.5 rounded-2xl bg-[#C6D0D9]/30 border border-[#3A0F34]/15 flex items-center space-x-3">
+                  <Calendar className="w-5 h-5 text-[#EAAA00] shrink-0" />
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-gray-400">Timeline / Status</div>
-                    <div className="text-xs sm:text-sm font-bold text-[#0B1F33]">
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-[#3A0F34]/60">Timeline / Status</div>
+                    <div className="text-xs sm:text-sm font-bold text-[#3A0F34]">
                       {selectedPoster.modal.date} {selectedPoster.modal.scoreOrResult ? `· ${selectedPoster.modal.scoreOrResult}` : ''}
                     </div>
                   </div>
@@ -534,23 +511,23 @@ export const AchievementsGallery: React.FC = () => {
 
               {/* Detailed Narrative */}
               <div className="space-y-2">
-                <h4 className="text-xs font-black uppercase tracking-wider text-[#167D7F] font-mono">
+                <h4 className="text-xs font-black uppercase tracking-wider text-[#3A0F34] font-mono">
                   Overview & Context
                 </h4>
-                <p className="text-sm sm:text-base text-gray-700 font-sans leading-relaxed">
+                <p className="text-sm sm:text-base text-[#3A0F34]/80 font-sans leading-relaxed">
                   {selectedPoster.modal.overview}
                 </p>
               </div>
 
               {/* Key Highlights / Outcomes */}
               <div className="space-y-2.5">
-                <h4 className="text-xs font-black uppercase tracking-wider text-[#167D7F] font-mono">
+                <h4 className="text-xs font-black uppercase tracking-wider text-[#3A0F34] font-mono">
                   Key Accomplishments & Outcomes
                 </h4>
                 <div className="space-y-2">
                   {selectedPoster.modal.highlights.map((highlight, hIdx) => (
-                    <div key={hIdx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-gray-600">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <div key={hIdx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#3A0F34]/80">
+                      <CheckCircle2 className="w-4 h-4 text-[#EAAA00] shrink-0 mt-0.5" />
                       <span>{highlight}</span>
                     </div>
                   ))}
@@ -560,14 +537,14 @@ export const AchievementsGallery: React.FC = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 sm:p-6 bg-[#E4E7EB] border-t border-[#5C6068]/30 flex items-center justify-between">
-              <span className="text-xs font-mono text-gray-500">
+            <div className="p-4 sm:p-6 bg-[#E8EDF2] border-t border-[#3A0F34]/15 flex items-center justify-between">
+              <span className="text-xs font-mono text-[#3A0F34]/60">
                 Pavan Bhimaraju · Verified Achievement
               </span>
 
               <button
                 onClick={() => setSelectedPoster(null)}
-                className="px-5 py-2 rounded-xl bg-[#36393F] text-white text-xs sm:text-sm font-bold hover:bg-[#00A9C7] transition-colors cursor-pointer"
+                className="px-5 py-2 rounded-xl bg-[#3A0F34] text-white text-xs sm:text-sm font-bold hover:bg-[#4E1746] transition-colors cursor-pointer"
               >
                 Close Details
               </button>

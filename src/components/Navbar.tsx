@@ -31,22 +31,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[#36393F]/95 backdrop-blur-md shadow-md border-b border-[#5C6068] py-3' 
-        : 'bg-[#36393F]/85 backdrop-blur-sm py-4'
+        ? 'bg-[#C6D0D9]/95 backdrop-blur-md shadow-sm border-b border-[#3A0F34]/15 py-3' 
+        : 'bg-transparent py-4'
     }`}>
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
           {/* Logo & Identity matching reference */}
           <a href="#agent" className="flex items-center space-x-3 group">
-            <div className="w-9 h-9 rounded-lg bg-[#00A9C7] flex items-center justify-center font-black text-white text-lg shadow-sm">
+            <div className="w-9 h-9 rounded-lg bg-[#3A0F34] flex items-center justify-center font-black text-[#EAAA00] text-lg shadow-sm group-hover:scale-105 transition-transform">
               P
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm sm:text-base tracking-wide text-[#F5F7FA] group-hover:text-[#00A9C7] transition-colors leading-tight">
+              <span className="font-extrabold text-sm sm:text-base tracking-wide text-[#3A0F34] group-hover:text-[#EAAA00] transition-colors leading-tight">
                 PAVAN BHIMARAJU
               </span>
-              <span className="text-[10px] tracking-wider uppercase font-semibold text-[#D5D7DC]">
+              <span className="text-[10px] tracking-wider uppercase font-semibold text-[#5A3A54]">
                 CS ENGINEER • AI & DEV
               </span>
             </div>
@@ -62,26 +62,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
                   href={link.href}
                   className={`text-xs font-bold tracking-wider uppercase transition-colors relative py-1 ${
                     isActive 
-                      ? 'text-[#00A9C7]' 
-                      : 'text-[#D5D7DC] hover:text-[#00A9C7]'
+                      ? 'text-[#3A0F34] font-black' 
+                      : 'text-[#5A3A54] hover:text-[#3A0F34]'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00A9C7] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#EAAA00] rounded-full" />
                   )}
                 </a>
               );
             })}
           </nav>
 
-          {/* Right Social Icons & Key matching reference */}
+          {/* Right Social Icons matching reference */}
           <div className="hidden sm:flex items-center space-x-3">
             <a
               href="https://github.com/Pavan8930"
               target="_blank"
               rel="noreferrer"
-              className="w-8 h-8 rounded-full bg-[#454951] hover:bg-[#00A9C7] hover:text-white text-[#D5D7DC] border border-[#5C6068] flex items-center justify-center transition-colors"
+              className="w-8 h-8 rounded-full bg-white text-[#3A0F34] hover:bg-[#EAAA00] hover:text-[#3A0F34] flex items-center justify-center transition-all shadow-sm"
               title="GitHub Profile"
             >
               <GithubIcon className="w-4 h-4" />
@@ -90,14 +90,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
               href="https://linkedin.com/in/pavanbhimaraju"
               target="_blank"
               rel="noreferrer"
-              className="w-8 h-8 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+              className="w-8 h-8 rounded-full bg-white text-[#3A0F34] hover:bg-[#EAAA00] hover:text-[#3A0F34] flex items-center justify-center transition-all shadow-sm"
               title="LinkedIn Profile"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
             </a>
             <a
               href="mailto:pavanbhimaraju4@gmail.com"
-              className="w-8 h-8 rounded-full bg-[#454951] hover:bg-[#00A9C7] hover:text-white text-[#D5D7DC] border border-[#5C6068] flex items-center justify-center transition-colors"
+              className="w-8 h-8 rounded-full bg-white text-[#3A0F34] hover:bg-[#EAAA00] hover:text-[#3A0F34] flex items-center justify-center transition-all shadow-sm"
               title="Google Drive / Resume"
             >
               <GoogleDriveIcon className="w-4 h-4" />
@@ -108,14 +108,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
           <div className="flex lg:hidden items-center space-x-2">
             <button
               onClick={onOpenAgent}
-              className="flex items-center space-x-1 px-3 py-1.5 bg-[#00A9C7] text-white font-bold text-xs rounded-full"
+              className="flex items-center space-x-1 px-3 py-1.5 bg-[#EAAA00] hover:bg-[#D49800] text-[#3A0F34] font-black text-xs rounded-full shadow-xs cursor-pointer"
             >
               <Bot className="w-3.5 h-3.5" />
               <span>Ask</span>
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#F5F7FA] hover:text-[#00A9C7]"
+              className="p-2 text-[#3A0F34] hover:text-[#EAAA00] cursor-pointer"
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -127,13 +127,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#36393F] border-b border-[#5C6068] px-6 py-4 space-y-3">
+        <div className="lg:hidden bg-[#C6D0D9] border-b border-[#3A0F34]/15 px-6 py-4 space-y-3 shadow-md">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-bold uppercase tracking-wider text-[#D5D7DC] hover:text-[#00A9C7]"
+              className="block py-2 text-sm font-bold uppercase tracking-wider text-[#3A0F34] hover:text-[#EAAA00]"
             >
               {link.label}
             </a>
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
                 setMobileMenuOpen(false);
                 onOpenAgent();
               }}
-              className="w-full py-2.5 bg-[#00A9C7] text-white font-bold rounded-lg text-sm flex items-center justify-center space-x-2"
+              className="w-full py-2.5 bg-[#EAAA00] hover:bg-[#D49800] text-[#3A0F34] font-black rounded-lg text-sm flex items-center justify-center space-x-2 shadow-xs cursor-pointer"
             >
               <Bot className="w-4 h-4" />
               <span>Ask About Me</span>
