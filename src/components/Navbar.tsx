@@ -96,9 +96,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgent, activeSection }) =>
               <LinkedinIcon className="w-3.5 h-3.5" />
             </a>
             <a
-              href="mailto:pavanbhimaraju4@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=pavanbhimaraju4%40gmail.com"
+              target="_blank"
+              rel="noreferrer"
               className="w-8 h-8 rounded-full bg-white text-[#3A0F34] hover:bg-[#EAAA00] hover:text-[#3A0F34] flex items-center justify-center transition-all shadow-sm"
-              title="Email Pavan (pavanbhimaraju4@gmail.com)"
+              title="Email Pavan (Gmail)"
               aria-label="Email Pavan"
             >
               <EmailIcon className="w-4 h-4" />
